@@ -20,6 +20,7 @@ class Solution {
     
         
         Queue<int []> queue = new ArrayDeque<>();
+        visited[r][c] = true;
         queue.offer(new int[]{r,c,cnt});
         while(!queue.isEmpty()){
             int [] result = queue.poll();
