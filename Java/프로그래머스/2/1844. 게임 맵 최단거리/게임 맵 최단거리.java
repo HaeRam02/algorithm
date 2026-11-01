@@ -17,7 +17,7 @@ class Solution {
         int c = 0;
         int cnt = 0;
         
-        ArrayList<Integer> arr = new ArrayList<>();
+    
         
         Queue<int []> queue = new ArrayDeque<>();
         queue.offer(new int[]{r,c,cnt});
@@ -28,8 +28,7 @@ class Solution {
             int newCnt = result[2];
             if(nr == n - 1 && nc == m - 1){
                 newCnt++;
-                arr.add(newCnt);
-                continue;
+                return newCnt;
             }
             newCnt++;
             for(int i = 0; i < 4; i++){
@@ -45,13 +44,7 @@ class Solution {
             }
         }
         
-        if(arr.size() == 0) return -1;
+        return -1;
         
-        int min = arr.get(0);
-        for(int i = 1; i < arr.size(); i++){
-            if(arr.get(i) < min) min = arr.get(i);
-        }
-        
-        return min;
     }
 }
